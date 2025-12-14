@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { Html5QrcodeScanner } from "html5-qrcode";
 import {
   Card,
@@ -48,49 +48,44 @@ const products = [
   { _id: "5678", product: "Pain Relief Cream", quantity: 1, unit: "lotion", unitPurchasePrice: 1100, unitSalePrice: 1900, barcodeID: "9268839786736" },
 ];
 
-const data = Array(50).fill(0).map((_, index) => `Item ${index}`);
-// const userJson = localStorage.getItem("user")
-// const user = JSON.parse(userJson)
-
 const PosPage = () => {
-  const { t } = useTranslation()
   const [scannedItem, setScannedItem] = useState(null); // Currently scanned item
   const [cart, setCart] = useState([]); // Cart items
   const [scannerModalOpened, setScannerModalOpened] = useState(false); // Scanner modal state
   const [receiptVisible, setReceiptVisible] = useState(false); // Receipt modal visibility
-  const html5QrCodeRef = useRef(null); // Reference for the barcode scanner
-  const lastScannedRef = useRef(null); // To track the last scanned barcode
-  const inputRef = useRef();
   const [barcode, setBarcode] = useState("");
-  const barcodeBufferRef = useRef("");
-  const lastKeyTimeRef = useRef(Date.now());
   const [scanner, setScanner] = useState(false);
-  const scannerRef = useRef(null);
-  const receiptRef = useRef(null);
   const [payment, setPayment] = useState({
-      netTotal: 0,
-      discount: 0,
-      previous: 0,
-      paidAmount: 0,
-      dueAmount: 0,
-      paymentType: "",
-      transactionID: "",
-      cashAmount: 0,
-      bankakAmount: 0,
-      cashoutAmount: 0,
-    });
+    netTotal: 0,
+    discount: 0,
+    previous: 0,
+    paidAmount: 0,
+    dueAmount: 0,
+    paymentType: "",
+    transactionID: "",
+    cashAmount: 0,
+    bankakAmount: 0,
+    cashoutAmount: 0,
+  });
   const [discountPercentage, setDiscountPercentage] = useState(0);
   // const [discountByAmount, setDiscountByAmount] = useState(0);
   const [discountAmount, setDiscountAmount] = useState(0)
   const [discountType, setDiscountType] = useState("percent"); // "percent" or "amount"
-
   const [paymentResponse, setPaymentResponse] = useState(null)
   const [value, setValue] = useState(null)
-  const BASE_URL = import.meta.env.VITE_URL;
   const [inventoryData, setInventoryData] = useState([])
   const [selectedProductId, setSelectedProductId] = useState(""); // Track selected product ID
   const [searchValue, onSearchChange] = useState('');
 
+  const BASE_URL = import.meta.env.VITE_URL;
+  const { t } = useTranslation();
+  const inputRef = useRef();
+  const scannerRef = useRef(null);
+  const receiptRef = useRef(null);
+  const barcodeBufferRef = useRef("");
+  const lastKeyTimeRef = useRef(Date.now());
+  const html5QrCodeRef = useRef(null); // Reference for the barcode scanner
+  const lastScannedRef = useRef(null); // To track the last scanned barcode
   const userJson = localStorage.getItem("user")
   const user = JSON.parse(userJson)
 
@@ -106,12 +101,12 @@ const PosPage = () => {
   };
 
   useEffect(() => {
-      const url = `${BASE_URL}/inventory/list-all`
-      fetchInventoryData(url)
-      console.log(url) // "123"
+    const url = `${BASE_URL}/inventory/list-all`
+    fetchInventoryData(url)
+    console.log(url) // "123"
 
-      console.log(inventoryData)
-    }, [])
+    console.log(inventoryData)
+  }, [])
 
   // Transform the data for the Select component
   const selectData = inventoryData.map((item) => ({
