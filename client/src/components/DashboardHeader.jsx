@@ -17,11 +17,10 @@ import moment from "moment";
 
 const DashboardHeader = ({changeLanguage, value, shiftRemainingTime}) => {
   const theme = useMantineTheme();
-
   return (
     <Header height={60}  p="md" sx={{backgroundColor: "#1D242E", color: "white"}} >
       <Flex justify="space-between">
-        <Text color="white" fw="bold">PHARMACO</Text>
+        <Text color="white" fw="bold">أعمال الأسرة للإستيراد والتصدير</Text>
         
         {/* <Group>
           <Input
