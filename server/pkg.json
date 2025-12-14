@@ -1,0 +1,6 @@
+{
+    "assets": [".env"],
+    "scripts": [
+      "node_modules/bcrypt/bcrypt.js"
+    ]
+}  
