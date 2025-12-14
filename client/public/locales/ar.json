@@ -145,7 +145,7 @@
     "RETURN": "رجوع",
     "Purchase-Invoice": "فاتورة شراء",
     "EXPENSES": "المنصرفات",
-    "CASHOUT": "بنكك => كاش",
+    "CASHOUT": "بنكك <=> كاش",
     "Discount-BY-AMOUNT": "خصم بالمبلغ",
     "LEDGER": "الخزينة",
     "Cash-Balance": "الرصيد النقدي",
@@ -154,7 +154,7 @@
     "OCash-Balance": "رصيد أوكاش",
     "Total-Income-Today": "إجمالي الدخل اليوم",
     "Total-Current-Balance": "إجمالي الرصيد الحالي",
-    "Cash-Expenses-Today": "منصرفات اليو النقدية",
+    "Cash-Expenses-Today": "منصرفات اليوم النقدية",
     "Bankak-Expenses-Today": "منصرفات اليوم البنكية",
     "Total-Expenses-Today": "إجمالي المنصرفات اليوم",
     "Cashout-Today": "بدل الكاش اليوم"
