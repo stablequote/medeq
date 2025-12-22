@@ -55,7 +55,7 @@ function Login() {
       <Container size="md" py="lg">
         <Center px="lg">
         <Paper shadow='lg' withBorder py="lg" px={30}>
-          <Text fz={26} fw={700}>ISMEQ Login</Text>
+          <Text fz={26} fw={700}>MEDEQ Login</Text>
           <Box>
             <TextInput label="username" placeholder='enter your username' name="username" value={user.username} p={3} onChange={(e) => setUser({ ...user, username: e.target.value })} required />
             <PasswordInput label="password" placeholder='enter your password' name="password" value={user.password} p={3} mb="xs" onChange={(e) => setUser({ ...user, password: e.target.value })} required />
