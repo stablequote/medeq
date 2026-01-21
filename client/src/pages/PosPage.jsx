@@ -341,7 +341,7 @@ const PosPage = () => {
             </style>
           </head>
           <body>
-            <h2>Kambal Pharmacy Receipt</h2>
+            <h2>أعمال الأسرة للإستيراد والتصدير</h2>
             <table>
               <thead>
                 <tr>
